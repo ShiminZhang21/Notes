@@ -1,0 +1,721 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+@include-when-export url(https://fonts.loli.net/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext);
+
+/* cyrillic-ext */
+/* cyrillic */
+:root {
+	--window-border: none;
+	--typora-center-window-title: true;
+	--active-file-bg-color: #f3f3f3;
+	--bg-color: #fcfcfc;
+	--control-text-color: #777;
+}
+
+.mac-seamless-mode #typora-sidebar {
+	top: 20px;
+	padding-top: 0;
+	height: auto;
+}
+
+html,
+body,
+#write{
+	background: #fcfcfc;
+	background: var(--bg-color);
+	font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", 'Segoe UI Emoji', sans-serif;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #111;
+	font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", sans-serif;
+}
+
+html {
+	font-size:16px;
+}
+
+#write {
+	max-width: 914px;
+	text-align: justify;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+#write>h1:first-child {
+	margin-top: 2.75rem;
+}
+#write>h2:first-child {
+	margin-top: 1.75rem;
+}
+#write>h3:first-child {
+	margin-top: 1rem;
+}
+#write>h4:first-child {
+	margin-top: 0.5rem;
+}
+h1 {
+	font-weight: normal;
+	line-height: 4rem;
+	margin: 0 0 1.75rem;
+	padding: 20px 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 4rem;
+}
+h2 {
+	font-weight: normal;
+	line-height: 3rem;
+	margin: 0 0 1.9375rem;
+	padding: 0 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 3rem
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-weight: normal;
+}
+h5 {
+	font-size: 1.125rem;
+	font-weight: normal;
+}
+h6 {
+	font-size: 1rem;
+	font-weight: bold;
+}
+p {
+	color: #111;
+	font-size: 1rem;
+	line-height: 1.75rem;
+	margin: 0 0 1.25rem;
+}
+#write>h3.md-focus:before {
+	left: -1.875rem;
+	top: 0.5rem;
+	padding: 2px;
+}
+#write>h4.md-focus:before {
+	left: -1.875rem;
+	top: 0.3125rem;
+	padding: 2px;
+}
+#write>h5.md-focus:before {
+	left: -1.875rem;
+	top: 0.25rem;
+	padding: 2px;
+}
+#write>h6.md-focus:before {
+	left: -1.875rem;
+	top: .125rem;
+	padding: 2px;
+}
+@media screen and (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.250rem;
+	}
+	.h5,
+	h5 {
+		font-size: 1.150rem;
+	}
+	.h6,
+	h6 {
+		font-size: 1rem;
+	}
+}
+a,
+.md-def-url {
+	color: #990000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+table {
+	margin-bottom: 20px
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.25rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+code, .md-fences {
+	padding: .5em;
+	/*background: #f0f0f0;*/
+	border: 1px solid #ccc;
+	padding: .1em;
+	font-size: 0.9em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+.md-fences {
+	margin: 0 0 20px;
+	font-size: 1em;
+	padding: 0.3em 1em;
+  	padding-top: 0.4em;
+}
+.task-list{
+	padding-left: 0;
+}
+
+.task-list-item {
+	padding-left:2.125rem;
+}
+
+input {
+	border-style: ridge;
+}
+
+.task-list-item input {
+	top: 3px;
+}
+
+.md-task-list-item input {
+	margin-left: -1.5em;
+}
+
+.task-list-item input:before {
+	content: "";
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid gray;
+	background-color: #fdfdfd;
+	margin-left: 0;
+	-webkit-appearance: none;
+	margin-top: -1rem;
+}
+
+.typora-node .task-list-item input:before {
+	top: 0.3ex;
+	position: absolute;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before{
+	content: '\25FC';
+	/*◘*/
+	font-size: 0.8125rem;
+	line-height: 0.9375rem;
+}
+
+/* Chrome 29+ */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    .task-list-item input:before {
+    	margin-top: -0.2rem;
+    }
+
+    .task-list-item input:checked:before,
+	.task-list-item input[checked]:before {
+		margin-top: -0.2rem;
+	}
+}
+
+blockquote {
+	margin: 0 0 1.11111rem;
+	padding: 0.5rem 1.11111rem 0 1.05556rem;
+	border-left: 1px solid gray;
+}
+blockquote,
+blockquote p {
+	line-height: 1.6;
+	color: #6f6f6f;
+}
+#write pre.md-meta-block {
+	min-height: 30px;
+	background: #f8f8f8;
+	padding: 1.5em;
+	font-weight: 300;
+	font-size: 1em;
+	padding-bottom: 1.5em;
+	padding-top: 3em;
+    margin-top: -1.5em;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+}
+.MathJax_Display {
+	font-size: 0.9em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+p.mathjax-block,
+.mathjax-block {
+	padding-bottom: 0;
+}
+.mathjax-block>.code-tooltip {
+	bottom: 5px;
+	box-shadow: none;
+}
+.md-image>.md-meta {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+.md-image>img {
+	margin-top: 2px;
+}
+.md-image>.md-meta:first-of-type:before {
+	padding-left: 4px;
+}
+
+#typora-source {
+	color: #555;
+}
+
+/** ui for windows **/
+#md-searchpanel {
+    border-bottom: 1px solid #ccc;
+}
+
+#md-searchpanel .btn {
+    border: 1px solid #ccc;
+}
+
+#md-notification:before {
+	top: 14px;
+}
+
+#md-notification {
+	background: #eee;
+}
+
+.megamenu-menu-panel .btn {
+	border: 1px solid #ccc;
+}
+
+#typora-sidebar {
+	box-shadow: none;
+}
+
+.file-list-item ,
+.show-folder-name .file-list-item {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	line-height: 20px;
+}
+
+.file-list-item-summary {
+	height: 40px;
+	line-height: 20px;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						} @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>NotesV1</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><p>&nbsp;</p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n6"><a class="md-toc-inner" href="#aps-note">APS NOTE</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n7"><a class="md-toc-inner" href="#defect-in-materialsmethod">Defect in materials(Method)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n113"><a class="md-toc-inner" href="#a43-first-principles-and-quantum-embedding-simulations-for-point-defects-in-semiconductors">A43 First-Principles and Quantum Embedding Simulations for Point Defects in Semiconductors:</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n108"><a class="md-toc-inner" href="#current-state-of-embedding-techniques-for-quantum-computingbarbara-a-jones">Current state of Embedding techniques for Quantum Computing(Barbara A Jones)</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n102"><a class="md-toc-inner" href="#what-is-quantm-embeding-simulation"><span>		</span>What is Quantm embeding simulation?</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n119"><a class="md-toc-inner" href="#scheme-of-embeding-region"><span>		</span>Scheme of embeding region:</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n129"><a class="md-toc-inner" href="#hybrid-calculation-for-quantum-embedding-system"><span>		</span>Hybrid calculation for quantum embedding system:</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n122"><a class="md-toc-inner" href="#vqe--the-variational-quantum-eigensolver"><span>		</span>VQE ( The Variational Quantum Eigensolver)</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n137"><a class="md-toc-inner" href="#some-example-to-use-quantum-computer-for-embedding-calculation-with-dftvqe"><span>		</span>Some example to use Quantum computer for Embedding calculation with DFT+VQE:</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n190"><a class="md-toc-inner" href="#messages">Messages:</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n84"><a class="md-toc-inner" href="#first-principles-and-quantum-embedding-simulation-for-point-defects-in-semiconductors">First-Principles and Quantum Embedding Simulation for Point Defects in Semiconductors</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n291"><a class="md-toc-inner" href="#work1-reformulate-bse-with-reducing-scaling--machinine-learning-acceleration">Work1: Reformulate BSE with reducing scaling &amp; machinine learning acceleration</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n390"><a class="md-toc-inner" href="#work2-neutral-excitaions-lattice-relaxation--calculate-pl">Work2: Neutral excitaions+ lattice relaxation:  Calculate PL</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n302"><a class="md-toc-inner" href="#work3-nertral-excitation-of-embeded-systems">Work3: Nertral excitation of embeded systems:</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n282"><a class="md-toc-inner" href="#useful-reference-">Useful reference :</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n222"><a class="md-toc-inner" href="#related-work">related work:</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n466"><a class="md-toc-inner" href="#computational-spectroscopy-for-point-defects-cyrus-e-dreyer">Computational spectroscopy for point defects (Cyrus E Dreyer)</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n491"><a class="md-toc-inner" href="#works">Works:</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n596"><a class="md-toc-inner" href="#useful-references">Useful references:</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n624"><a class="md-toc-inner" href="#theoretical-magneto-optical-spectroscopy-of-solid-state-defect-quantum-bits-adam-gali">Theoretical magneto-optical spectroscopy of solid state defect quantum bits (Adam Gali)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1538"><a class="md-toc-inner" href="#b67-advanced-approaches-in-modeling-and-simulation-of-defects-00010005">B67 Advanced Approaches in Modeling and Simulation of Defects (0001,0005)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n701"><a class="md-toc-inner" href="#defect-in-materials-new-defects-proposed">Defect in materials (New defects proposed)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n964"><a class="md-toc-inner" href="#first-principles-predictions-of-out-of-plane-group-iv-and-v-dimers-as-high-symmetry-high-spin-defects-in-hexagonal-boron-nitride-marco-govoni">First-principles predictions of out-of-plane group IV and V dimers as high-symmetry high-spin defects in hexagonal boron nitride (Marco Govoni)</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n765"><a class="md-toc-inner" href="#method">Method:</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n768"><a class="md-toc-inner" href="#finding">Finding:</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n786"><a class="md-toc-inner" href="#unconventional-defect-configurations-in-aluminum-oxide">Unconventional defect configurations in aluminum oxide</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n315"><a class="md-toc-inner" href="#d67-defects-in-nitride-materials-new-types-of-defect-proposed">D67 Defects in Nitride Materials: New types of defect proposed </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n934"><a class="md-toc-inner" href="#k67-first-principle-study-on-optical-properties-of-defects-in-two-dimensional-materials">K67 First principle study on optical properties of defects in two-dimensional materials</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n949"><a class="md-toc-inner" href="#t72-extrinsic-and-intrinsic-defects-in-mgo-and-cao-as-potential-spin-qubit-candidates">T72 Extrinsic and Intrinsic Defects in MgO and CaO as potential spin-qubit candidates</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1591"><a class="md-toc-inner" href="#t72-beryllium-oxide-as-a-host-for-quantum-defects">T72 Beryllium oxide as a host for quantum defects</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1584"><a class="md-toc-inner" href="#othersno-video">Others(no video):</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n64"><a class="md-toc-inner" href="#substrate-and-strain-effects">Substrate and strain effects</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n647"><a class="md-toc-inner" href="#influence-of-substrates-on-properties-of-defect-based-quantum-emitters-in-hexagonal-boron-nitride-b7200006">Influence of substrates on properties of defect-based quantum emitters in hexagonal boron nitride (B72.00006)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n827"><a class="md-toc-inner" href="#g55-dielectric-and-substrate-engineered-tuning-of-photoluminescence-in-monolayer-ws2">G55 Dielectric and substrate engineered tuning of photoluminescence in monolayer WS2</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n839"><a class="md-toc-inner" href="#g67-optical-responses-of-boron-vacancy-defects-in-strained-hexagonal-boron-nitride">G67 Optical responses of boron-vacancy defects in strained hexagonal boron nitride</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1685"><a class="md-toc-inner" href="#y48-substrate-effects-on-the-properties-of-few-layer-mos2-and-the-mos2ws2-heterostructure-from-first-principles-gw">Y48 Substrate effects on the properties of few-layer MoS2 and the MoS2/WS2 heterostructure from first-principles GW</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1705"><a class="md-toc-inner" href="#y48-electronic-and-optical-properties-of-monolayer-boron-nitride-on-a-graphite-substrate">Y48 Electronic and Optical Properties of monolayer boron nitride on a graphite substrate</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n791"><a class="md-toc-inner" href="#calculation-method">Calculation method</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n794"><a class="md-toc-inner" href="#g66-efficient-gw-calculations-in-two-dimensional-through-the-interpolation-of-the-screened-potential">G66 Efficient GW calculations in two dimensional through the interpolation of the screened potential</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1572"><a class="md-toc-inner" href="#k46-phonon-assisted-luminescence-in-qubits-from-many-body-perturbation-theory">K46 Phonon-assisted luminescence in qubits from many-body perturbation theory</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n661"><a class="md-toc-inner" href="#spin-relaxation">Spin relaxation</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n51"><a class="md-toc-inner" href="#g39-simulations-of-spin-qubit-dynamics-made-simple-galli">G39 Simulations of Spin Qubit Dynamics Made Simple (Galli)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n891"><a class="md-toc-inner" href="#k37-ensemble-spin-relaxation-studies-of-shallow-donor-qubits-in-zno">K37 Ensemble spin relaxation studies of shallow donor qubits in ZnO</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n919"><a class="md-toc-inner" href="#m46--novel-first-principles-tools-for-electron-dynamics-in-quantum-materials-and-devices-marco-bernadi">M46  Novel First-Principles Tools for Electron Dynamics in Quantum Materials and Devices (Marco Bernadi)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1594"><a class="md-toc-inner" href="#w46-calculating-phonons-within-the-flapw-method-using-density-functional-perturbation-theory-dfpt">W46 Calculating Phonons within the FLAPW Method using Density Functional Perturbation Theory (DFPT)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1610"><a class="md-toc-inner" href="#w46-electron-spin-decoherence-due-to-phonons-unified-many-body-framework-and-first-principles-calculations">W46 Electron spin decoherence due to phonons: Unified many-body framework and first-principles calculations</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1621"><a class="md-toc-inner" href="#y36-scaling-spin-coherence-in-solid-state-defect-qubit">Y36 Scaling Spin Coherence in Solid-state Defect Qubit</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1629"><a class="md-toc-inner" href="#other-that-have-no-video-yet">Other that have no video yet:</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1633"><a class="md-toc-inner" href="#y48-first-principles-calculations-of-excitons-in-2d-photoemission-spectra-relaxation-dynamics-and-magnetic-effects">Y48 First-principles calculations of excitons in 2D: photoemission spectra, relaxation dynamics, and magnetic effects</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1651"><a class="md-toc-inner" href="#y52-first-principles-prediction-of-long-spin-lifetimes-in-materials-with-uniform-internal-magnetic-fields">Y52 First-principles prediction of long spin lifetimes in materials with uniform internal magnetic fields</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1655"><a class="md-toc-inner" href="#y52-ab-initio-calculation-of-t2-using-lindbladian-dynamics">Y52 Ab initio calculation of T2 using Lindbladian dynamics</a></span></p></div><h1 id='aps-note'><span>APS NOTE</span></h1><p><span>Three main topics are of intereat. First is the defect related research and progress and secondly are the research that related to substrate and strain effect on electronic and optical properties. Finally we look at the spin relaxation related research.</span></p><h2 id='defect-in-materialsmethod'><span>Defect in materials(Method)</span></h2><p><span>Many people recognize the single determinant level such as DFT and GW does not work for defect problems</span></p><h3 id='a43-first-principles-and-quantum-embedding-simulations-for-point-defects-in-semiconductors'><span>A43 First-Principles and Quantum Embedding Simulations for Point Defects in Semiconductors:</span></h3><p><a href="#top"><span> Back to top</span></a></p><p><a href='https://apsmarch22.onlineeventpro.freeman.com/live-stream/23877943/A43' target='_blank' class='url'>https://apsmarch22.onlineeventpro.freeman.com/live-stream/23877943/A43</a></p><h4 id='current-state-of-embedding-techniques-for-quantum-computingbarbara-a-jones'><span>Current state of Embedding techniques for Quantum Computing(Barbara A Jones)</span></h4><h5 id='what-is-quantm-embeding-simulation'><span>		</span><span>What is Quantm embeding simulation?</span></h5><p><span>Method of combining claculation of different modalities. Usually for calculating the system which consist of material system+ strong correlated or interacted sub-system (such as defect). Embeding method use medium accurate but cheat approach for the calcualtion of host material, and high accurate expensive approach for teh correlated sub-system.</span></p><h5 id='scheme-of-embeding-region'><span>		</span><span>Scheme of embeding region:</span></h5><ul><li><span>Embedding region &lt;------ MBPT or quantum computer simulation</span></li><li><span>Rest of the region &lt;------- usually DFT</span></li></ul><h5 id='hybrid-calculation-for-quantum-embedding-system'><span>		</span><span>Hybrid calculation for quantum embedding system:</span></h5><p><strong><span>Hybrid calculation in quantum computing</span></strong><span>: quantum computer for Embeeding region (like defect )+ Classical approach (liek DFT ) for the other region.</span></p><h5 id='vqe--the-variational-quantum-eigensolver'><span>		</span><span>VQE ( The Variational Quantum Eigensolver)</span></h5><p><span>calculate the energy of a Hamiltonian in Embedding region.</span></p><p><img src="Images/VQE.png" alt="image-20220320192856406" style="zoom:50%;" /></p><h5 id='some-example-to-use-quantum-computer-for-embedding-calculation-with-dftvqe'><span>		</span><span>Some example to use Quantum computer for Embedding calculation with DFT+VQE:</span></h5><p><span>The following example all use DFT+VQE to solve for the system. But use different wavefunction and embedding hamiltonian to account for the &quot;active orbitals&quot;, where &quot;active orbitals &quot; means those who are of strong correlation.</span></p><ul><li><span>Mean field potential acount for inactive electrons; </span></li></ul><p><span>electron in real space split into active and inactive. Likely to be more accurate then traditional DFT. However it is not doable on current harware, and QC part is hard to converge.</span></p><p><a href='https://aip.scitation.org/doi/pdf/10.1063/5.0029536' target='_blank' class='url'>https://aip.scitation.org/doi/pdf/10.1063/5.0029536</a></p><ul><li><span>Fragment-based embedding . </span></li></ul><p><a href='https://arxiv.org/pdf/2109.08062.pdf' target='_blank' class='url'>https://arxiv.org/pdf/2109.08062.pdf</a></p><p><img src="Images/DFT_VQE.png" alt="image-20220320194454152" style="zoom:50%;" /></p><ul><li><p><span>surface defects:</span></p><p><img src="Images/surfave_defects.png" alt="image-20220320194851414" style="zoom:50%;" /></p></li></ul><h5 id='messages'><span>Messages:</span></h5><ul><li><span>Hybrid calculation for quantum computer can be used for defect calculation.</span></li><li><span>How to model the Hamiltonian that can separate the active space for correlation,and how to entangle the active region with the &quot;bath&quot;. These are the challenges need to be solved.</span></li></ul><p>&nbsp;</p><h4 id='first-principles-and-quantum-embedding-simulation-for-point-defects-in-semiconductors'><span>First-Principles and Quantum Embedding Simulation for Point Defects in Semiconductors</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span> This work focus on Optical properties calculation for defects</span></p><p><img src="Images/defect_Optics.png" referrerpolicy="no-referrer" alt="image-20220320222035350"></p><p><span>Contents:</span><img src="Images/contents.png" referrerpolicy="no-referrer" alt="image-20220320223304060"></p><h5 id='work1-reformulate-bse-with-reducing-scaling--machinine-learning-acceleration'><span>Work1: Reformulate BSE with reducing scaling &amp; machinine learning acceleration</span></h5><ul><li><p><span>Problem: BSE need empty states--&gt; expensive for large system</span></p></li><li><p><span>Solution :</span></p><ol><li><span>use first equation for Absorption spectra. Use Liouville equation solve for P and E--&gt;avoid empty states.</span></li></ol><p><img src="Images/BSE_Improve.png" referrerpolicy="no-referrer" alt="image-20220320224221412"></p></li></ul><p><img src="Images/DMPT.png" referrerpolicy="no-referrer" alt="image-20220320224432794"></p><p><img src="Images/DFT_Liouvill.png" referrerpolicy="no-referrer" alt="image-20220320224640459"></p><ol start='2' ><li><span>Calculate dielectric screening wiht finite field method:</span></li></ol><p><img src="Images/finite_Field.png" referrerpolicy="no-referrer" alt="image-20220320225016731"></p><ol start='3' ><li><p><span>For finite temperature: multiple system calculation--&gt;machine learning train--&gt;dielectric screening</span></p><p><img src="Images/Machine_Learning.png" alt="image-20220320225512324" style="zoom:50%;" /></p></li></ol><h5 id='work2-neutral-excitaions-lattice-relaxation--calculate-pl'><span>Work2: Neutral excitaions+ lattice relaxation:  Calculate PL</span></h5><ul><li><p><span>Compute PL using the </span><strong><span>generating function approach</span></strong><span> (see [1] in ref)</span></p></li><li><p><span>Method to describe forces for excited states: CDFT, TDDFT</span></p><ul><li><p><span>Triplet state --&gt;CDFT; Singlet state and other that beyond Triplet--&gt;TDDFT</span></p></li><li><p><span>Sinplet state see structure change a lot, can not use CDFT</span></p><p><img src="Images/TDDFT.png" referrerpolicy="no-referrer" alt="image-20220320230447387"></p></li></ul></li></ul><h5 id='work3-nertral-excitation-of-embeded-systems'><span>Work3: Nertral excitation of embeded systems:</span></h5><p><span>Using Quantum defect embeding theory (QDFT) to solve more accuratly than just singlet.</span></p><p><img src="../../../../Library/Application Support/typora-user-images/image-20220320230852368.png" alt="image-20220320230852368" style="zoom:50%;" /></p><p><span>Coupled use of pre-exascale and quantum computer</span></p><p><img src="../../../../Library/Application Support/typora-user-images/image-20220320230945216.png" referrerpolicy="no-referrer" alt="image-20220320230945216"></p><p><img src="Images/Quantum_Emm.png" referrerpolicy="no-referrer" alt="image-20220320231133568"></p><p><img src="Images/DFT_DMFT.png" referrerpolicy="no-referrer" alt="image-20220320231316258"></p><ul><li><p><span>Workflow and codes:</span></p><p><img src="Images/codes.png" referrerpolicy="no-referrer" alt="image-20220320232137374"></p></li></ul><h5 id='useful-reference-'><span>Useful reference :</span></h5><ul><li><span>Giulia&#39;s group [1]</span></li></ul><p><span>using constrained density functional theory (CDFT) and time-dependent hybrid DFT perform equally well in describing the excited state potential energy surface of triplet states</span></p><p><span> </span><a href='https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.5.084603' target='_blank' class='url'>https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.5.084603</a><span> (Giulia Galli&#39;s)</span></p><p><span>Using DMRG method for defect correlations</span></p><p><span> </span><img src="Images/DMRG.png" alt="image-20220315095217398" style="zoom:50%;" /></p><p><a href='https://arxiv.org/pdf/2203.05493.pdf' target='_blank' class='url'>https://arxiv.org/pdf/2203.05493.pdf</a></p><p><span>Use quantum embedding theory for Strong correlation of defects:</span></p><p><a href='https://arxiv.org/abs/2105.04736' target='_blank' class='url'>https://arxiv.org/abs/2105.04736</a></p><p><span>Exact double counting scheme for QDET (K46.0004)</span></p><p><a href='https://arxiv.org/abs/2203.05493' target='_blank' class='url'>https://arxiv.org/abs/2203.05493</a></p><ul><li><span>Cyrus E. Dreyer:</span></li></ul><p><span>We implement such an embedding method, based on Wannierization of defect orbitals and the constrained random-phase approximation approach. This paper use CBCN and NV- as an example.</span></p><p><a href='https://arxiv.org/pdf/2105.08705.pdf' target='_blank' class='url'>https://arxiv.org/pdf/2105.08705.pdf</a></p><ul><li><span>PyCCE: new package for simulating the dynamics of spin qubits in a spin bath</span></li></ul><p><a href='https://onlinelibrary.wiley.com/doi/10.1002/adts.202100254' target='_blank' class='url'>https://onlinelibrary.wiley.com/doi/10.1002/adts.202100254</a></p><ul><li><span>Formation energy of divacanvy in SiC:</span></li></ul><p><a href='https://www.nature.com/articles/s41467-021-26419-0' target='_blank' class='url'>https://www.nature.com/articles/s41467-021-26419-0</a></p><h5 id='related-work'><span>related work:</span></h5><ul><li><span>1st princople simulation of defects Spin properties (G39.00005)</span></li><li><span>Thermodynamical properties of defects (W72 0002, 0007)</span></li><li><span>Using TDDFT for vibrationally resolved absorption spetra between singlet states (T46.00011, Yujin)</span></li><li><span>An exact double counting scheme for QDET (quantum embeding )</span></li></ul><p>&nbsp;</p><h4 id='computational-spectroscopy-for-point-defects-cyrus-e-dreyer'><span>Computational spectroscopy for point defects (Cyrus E Dreyer)</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>This talk will discuss several examples of recent theoretical developments for : (i) improving the general quantitative accuracy of the methods, (ii) increasing the range of defect properties that can be addressed, and (iii) including aspects that make calculations more directly comparable to experiment</span></p><h5 id='works'><span>Works:</span></h5><ul><li><span>Non-radiative rate calculation+ stron el-pho interaction (exfiton ignored)</span></li><li><span>Quantum embedding theory:</span></li></ul><p><img src="Images/D1.png" style="zoom:50%;" /></p><p><img src="Images/D2.png" style="zoom:50%;" /></p><p><img src="Images/D3.png" style="zoom:50%;" /></p><p><img src="Images/D4.png" style="zoom:50%;" /></p><p><img src="Images/D6.png" style="zoom:50%;" /></p><p><img src="Images/D7.png" style="zoom:50%;" /></p><p><img src="Images/D8.png" style="zoom:50%;" /></p><h5 id='useful-references'><span>Useful references:</span></h5><p><span>Quantum embedding for defects</span></p><ul><li><p><span>Adam Gali:</span></p><p><span>We provide a complete quantitative description of the electronic structure and analyze the crossings and local minima of the energy surface of triplet and singlet states.</span></p><p><a href='https://www.nature.com/articles/s41535-018-0103-6' target='_blank' class='url'>https://www.nature.com/articles/s41535-018-0103-6</a></p></li><li><p><span>Galli group, He Ma</span></p><ul><li><span>present first-principles calculations of strongly correlated states of spin defects in diamond</span></li></ul><p><a href='https://pubs.rsc.org/en/content/articlelanding/2020/CP/D0CP04585C#!divAbstract' target='_blank' class='url'>https://pubs.rsc.org/en/content/articlelanding/2020/CP/D0CP04585C#!divAbstract</a></p><ul><li><span>present a quantum embedding theory for the calculation of strongly-correlated electronic states of active regions, with the rest of the system described within density functional theory</span></li></ul><p><a href='https://www.nature.com/articles/s41524-020-00353-z' target='_blank' class='url'>https://www.nature.com/articles/s41524-020-00353-z</a></p><ul><li><span>We present a detailed derivation of a quantum embedding theory recently introduced, which is based on the definition of effective Hamiltonians. The effect of the environment on a chosen active space is accounted for through screened Coulomb interactions evaluated using density functional theory</span></li></ul><p><a href='https://pubs.acs.org/doi/10.1021/acs.jctc.0c01258' target='_blank' class='url'>https://pubs.acs.org/doi/10.1021/acs.jctc.0c01258</a></p><ul><li><p><span>K46 An Exact Double Counting Scheme for Quantum Defect Embedding Theory(Galli)</span></p><p><span>Gulia Galli group work for solving the souble counting problem.</span></p><p><a href='https://arxiv.org/abs/2105.04736' target='_blank' class='url'>https://arxiv.org/abs/2105.04736</a></p></li></ul></li></ul><ul><li><p><span>Dreyer (this work)</span></p><p><span>using DFT to describe the bulk host material. We implement such an embedding method, based on Wannierization of defect orbitals and the constrained random-phase approximation approach.</span></p><p><span>sysmte: CBCN, NV-,  Al site in wurtzite AlN (FeAl)</span></p><p><a href='https://arxiv.org/abs/2105.08705' target='_blank' class='url'>https://arxiv.org/abs/2105.08705</a></p></li></ul><p>&nbsp;</p><h4 id='theoretical-magneto-optical-spectroscopy-of-solid-state-defect-quantum-bits-adam-gali'><span>Theoretical magneto-optical spectroscopy of solid state defect quantum bits (Adam Gali)</span></h4><p><span>Embeding approach:</span></p><p><img src="Images/Adam_1.png"  /></p><ul><li><p><span>Jahn-Teller effect and intersystem crossing for NV center</span></p></li><li><p><span>DMRG method for correlation</span></p><p><img src="Images/Adam_2.png" referrerpolicy="no-referrer"></p></li></ul><ul><li><p><span>gCCE3 theory of T2 evaluation:</span></p><p><img src="Images/Adam_3.png" referrerpolicy="no-referrer"></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h3 id='b67-advanced-approaches-in-modeling-and-simulation-of-defects-00010005'><span>B67 Advanced Approaches in Modeling and Simulation of Defects (0001,0005)</span></h3><p><a href="#top"><span> Back to top</span></a></p><p><span>No video yet</span></p><ul><li><p><span>0001: new computational approach</span></p><p><span>developing computational approaches for the first-principles prediction of the defect and doping properties in highly nonideal semiconductor materials</span></p></li><li><p><span>0005: machine learning to accelerate defect finding :</span></p><p><em><span>combining high-throughput density functional theory (DFT) with machine learning (ML) to develop predictive models for defect formation energy and charge transition levels in (a) ABX3 halide perovskites, and (b) zincblende group IV, III-V and II-VI semiconductors</span></em></p></li></ul><h2 id='defect-in-materials-new-defects-proposed'><span>Defect in materials (New defects proposed)</span></h2><p><a href="#top"><span> Back to top</span></a></p><h4 id='first-principles-predictions-of-out-of-plane-group-iv-and-v-dimers-as-high-symmetry-high-spin-defects-in-hexagonal-boron-nitride-marco-govoni'><span>First-principles predictions of out-of-plane group IV and V dimers as high-symmetry high-spin defects in hexagonal boron nitride (Marco Govoni)</span></h4><p><a href='https://pubs.acs.org/doi/abs/10.1021/acsami.1c16988' target='_blank' class='url'>https://pubs.acs.org/doi/abs/10.1021/acsami.1c16988</a></p><p><span>we combine density functional theory (DFT) and quantum embedding theories (QET), find new group of high-symmetry, hi-spin defect in hBN</span></p><h5 id='method'><span>Method:</span></h5><p><span>QE+ONCV+Dielectric-dependent hybrid functionals</span></p><p><img src="Images/Method2.png" referrerpolicy="no-referrer"></p><h5 id='finding'><span>Finding:</span></h5><p><img src="Images/out_of_plane.png" referrerpolicy="no-referrer"></p><ul><li><p><span>Caculated formation energy, HR factor , ZPL, Zero-field splitting.</span></p><ul><li><span>formation energy --&gt;stable</span></li><li><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="7.52ex" height="2.546ex" role="img" focusable="false" viewBox="0 -823.8 3324 1125.4" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.682ex;"><defs><path id="MJX-15-TEX-I-1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path><path id="MJX-15-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-15-TEX-I-1D441" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path><path id="MJX-15-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D446" xlink:href="#MJX-15-TEX-I-1D446"></use></g><g data-mml-node="msub" transform="translate(645,0)"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-15-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(378,-150) scale(0.707)"><use data-c="1D441" xlink:href="#MJX-15-TEX-I-1D441"></use></g></g><g data-mml-node="mi" transform="translate(1700.9,0)"><use data-c="1D446" xlink:href="#MJX-15-TEX-I-1D446"></use></g><g data-mml-node="msubsup" transform="translate(2345.9,0)"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-15-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(378,411.6) scale(0.707)"><use data-c="2212" xlink:href="#MJX-15-TEX-N-2212"></use></g><g data-mml-node="mi" transform="translate(378,-293.8) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-15-TEX-I-1D456"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>S</mi><msub><mi>i</mi><mi>N</mi></msub><mi>S</mi><msubsup><mi>i</mi><mi>i</mi><mo>−</mo></msubsup></math></mjx-assistive-mml></mjx-container><script type="math/tex">Si_N Si_i^-</script><span> have HR=4.47, small--&gt;visible sharp at low T</span></li><li><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="7.52ex" height="2.546ex" role="img" focusable="false" viewBox="0 -823.8 3324 1125.4" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.682ex;"><defs><path id="MJX-15-TEX-I-1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path><path id="MJX-15-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-15-TEX-I-1D441" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path><path id="MJX-15-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D446" xlink:href="#MJX-15-TEX-I-1D446"></use></g><g data-mml-node="msub" transform="translate(645,0)"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-15-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(378,-150) scale(0.707)"><use data-c="1D441" xlink:href="#MJX-15-TEX-I-1D441"></use></g></g><g data-mml-node="mi" transform="translate(1700.9,0)"><use data-c="1D446" xlink:href="#MJX-15-TEX-I-1D446"></use></g><g data-mml-node="msubsup" transform="translate(2345.9,0)"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-15-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(378,411.6) scale(0.707)"><use data-c="2212" xlink:href="#MJX-15-TEX-N-2212"></use></g><g data-mml-node="mi" transform="translate(378,-293.8) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-15-TEX-I-1D456"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>S</mi><msub><mi>i</mi><mi>N</mi></msub><mi>S</mi><msubsup><mi>i</mi><mi>i</mi><mo>−</mo></msubsup></math></mjx-assistive-mml></mjx-container><script type="math/tex">Si_N Si_i^-</script><span>  have 2.4 GHz ZFS, prefered for ODMR control</span></li></ul></li></ul><h4 id='unconventional-defect-configurations-in-aluminum-oxide'><span>Unconventional defect configurations in aluminum oxide</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>They use 3 statistic method to idensify defects.</span></p><p><img src="Images/U1.png" style="zoom:50%;" /></p><h4 id='d67-defects-in-nitride-materials-new-types-of-defect-proposed'><span>D67 Defects in Nitride Materials: New types of defect proposed </span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>III-nitride semiconductors (GaN, AlN, InN) and their alloys have enabled tremendous progress in a range of applications from wide-bandgap (WBG) power electronics to light-emitting devices. </span></p><h4 id='k67-first-principle-study-on-optical-properties-of-defects-in-two-dimensional-materials'><span>K67 First principle study on optical properties of defects in two-dimensional materials</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>DFT, HSE06, BSE, GW and Formation energy for defects in hBN and WSe2</span></p><p><img src="Images/image-20220321144846990.png" alt="image-20220321144846990" style="zoom:50%;" /></p><p><img src="Images/image-20220321144911386.png" alt="image-20220321144911386" style="zoom:50%;" /></p><p><img src="Images/image-20220321145041596.png" alt="image-20220321145041596" style="zoom:50%;" /></p><h4 id='t72-extrinsic-and-intrinsic-defects-in-mgo-and-cao-as-potential-spin-qubit-candidates'><span>T72 Extrinsic and Intrinsic Defects in MgO and CaO as potential spin-qubit candidates</span></h4><p><span>cDFT, DFT. </span></p><p><span>DFT+U.</span></p><p><span>Strong correlation discussed.</span></p><h4 id='t72-beryllium-oxide-as-a-host-for-quantum-defects'><span>T72 Beryllium oxide as a host for quantum defects</span></h4><p><a href="#top"><span> Back to top</span></a></p><h4 id='othersno-video'><span>Others(no video):</span></h4><p><span>K67 Excited-state spin-resonance spectroscopy of VB- defects in hexagonal boron nitride</span></p><p><span>K67 Theory of substitutional carbon defects in hexagonal boron nitride</span></p><h2 id='substrate-and-strain-effects'><span>Substrate and strain effects</span></h2><h4 id='influence-of-substrates-on-properties-of-defect-based-quantum-emitters-in-hexagonal-boron-nitride-b7200006'><span>Influence of substrates on properties of defect-based quantum emitters in hexagonal boron nitride (B72.00006)</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>They calculated ZPL for NBVN and VN on SiO2;</span></p><p><img src="Images/B72_1.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><img src="Images/substrate2.png" alt="image-20220321135251279" style="zoom:50%;" /></p><p><img src="../../../../Library/Application Support/typora-user-images/image-20220321135345874.png" alt="image-20220321135345874" style="zoom:50%;" /></p><p><strong><span>reason of the change of ZPL, intrinsically still due to lattice distortion, which we did not included in our substrate calculation</span></strong><span> So our result still proved only lattice distortion will cause the optical energy shift, while pure dielectrc change does not affect the optical energy.</span></p><h4 id='g55-dielectric-and-substrate-engineered-tuning-of-photoluminescence-in-monolayer-ws2'><span>G55 Dielectric and substrate engineered tuning of photoluminescence in monolayer WS2</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>Study exciton for WS2/SiO2. How separation between the material and substrate affect the the optical properties. </span></p><p><span>method: insert hBN between to increase the separation.</span></p><p><span>no video yet</span></p><p>&nbsp;</p><h4 id='g67-optical-responses-of-boron-vacancy-defects-in-strained-hexagonal-boron-nitride'><span>G67 Optical responses of boron-vacancy defects in strained hexagonal boron nitride</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>we report first-principles calculation of electronic band structures and optical absorption spectrum of VB and VB- single point defects in monolayer h-BN under external strain.</span></p><ul><li><p><span>Calculation detail:</span></p><ul><li><span>VASP +LDA</span></li><li><span>9 9 1 supercell; 15 A vacuum</span></li><li><span>1 1 1 k points</span></li></ul></li></ul><p><img src="Images/image-20220321143213415.png" alt="image-20220321143213415" style="zoom:50%;" /></p><p><span>they discussed the zero field splitting, breaking of symmetry due to JT distortion</span></p><h4 id='y48-substrate-effects-on-the-properties-of-few-layer-mos2-and-the-mos2ws2-heterostructure-from-first-principles-gw'><span>Y48 Substrate effects on the properties of few-layer MoS2 and the MoS2/WS2 heterostructure from first-principles GW</span></h4><p><a href='https://apsmarch22.onlineeventpro.freeman.com/sessions/23878776/subsession/33046479/Y48' target='_blank' class='url'>https://apsmarch22.onlineeventpro.freeman.com/sessions/23878776/subsession/33046479/Y48</a></p><p><span>(no video)</span></p><p><span>we focus on the effect of two commonly used substrates in experiments – hexagonal boron nitride and gold – on three systems: monolayer MoS2, bilayer MoS2, and the MoS2/WS2 heterostructure</span></p><p><span>first-principles dielectric embedding GW to capture the dielectric effect of the substrate</span></p><p><strong><span>They also use chi sum method. Only studied electronic structure.</span></strong></p><p>&nbsp;</p><h4 id='y48-electronic-and-optical-properties-of-monolayer-boron-nitride-on-a-graphite-substrate'><span>Y48 Electronic and Optical Properties of monolayer boron nitride on a graphite substrate</span></h4><p><a href='https://apsmarch22.onlineeventpro.freeman.com/sessions/23878776/subsession/33046486/Y48' target='_blank' class='url'>https://apsmarch22.onlineeventpro.freeman.com/sessions/23878776/subsession/33046486/Y48</a></p><p><span>(no video)</span></p><p><span>monolayer boron nitride (mBN) grown on Highly Ordered Pyrolytic Graphite (HOPG) substrate based on density functional theory and many-body perturbation theory</span></p><p><span>we find a </span><strong><span>huge reduction of exciton binding energy in the presence of HOPG substrate and a blue-shifting of the 1s-exciton energy to above 6 eV</span></strong><span> (This is too large)</span></p><p><span>we demonstrate that strong electron–phonon interactions also play an important role in the optical process of mBN and give rise to the multiple phonon sidebands as observed from photoluminescence measurements. As a result, we propose that both the strong dielectric screening from the substrate and the strong electron–phonon interaction must be explicitly included to the analysis of luminescence measurements</span></p><h2 id='calculation-method'><span>Calculation method</span></h2><h4 id='g66-efficient-gw-calculations-in-two-dimensional-through-the-interpolation-of-the-screened-potential'><span>G66 Efficient GW calculations in two dimensional through the interpolation of the screened potential</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>Solve the sampling converge problem when there&#39;s a sharp dielectric functin around q-&gt;0 limit. (like graphene)</span></p><p><span> improve the convergence of the QP corrections of 2D semiconductors with respect to the q-sampling, by combining Monte Carlo integration techniques and interpolation schemes of the screened potential.</span></p><h4 id='k46-phonon-assisted-luminescence-in-qubits-from-many-body-perturbation-theory'><span>K46 Phonon-assisted luminescence in qubits from many-body perturbation theory</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>Method to include the electron-phonon interaction in PL within a rigorous many-body perturbation theory framework.</span></p><p><span>Study model: negatively-charged boron vacancy in 2D hexagonal boron nitride</span></p><p><span>We show that phonons are responsible for the observed luminescence, which otherwise would bedark due to symmetry. We also show that the symmetry breaking induced by the static Jahn-Teller effect is not able to describe the presence of the experimentally observed peak at 1.5 eV. </span></p><p><img src="Images/Ph.png" style="zoom: 33%;" /></p><h2 id='spin-relaxation'><span>Spin relaxation</span></h2><h4 id='g39-simulations-of-spin-qubit-dynamics-made-simple-galli'><span>G39 Simulations of Spin Qubit Dynamics Made Simple (Galli)</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><a href='https://onlinelibrary.wiley.com/doi/10.1002/adts.202100254' target='_blank' class='url'>https://onlinelibrary.wiley.com/doi/10.1002/adts.202100254</a></p><p><span>proposed a python library for first-principles calculations of qubits’ coherence---PyCCE (release in a month)</span></p><p><span>simulating the dynamics of spin qubits in a spin bath using the cluster-correlation expansion (CCE) method</span></p><ul><li><p><span>calculation sample: </span></p><ul><li><span>Hahn-echo coherence time of the nitrogen-vacancy in diamond; </span></li><li><span>the calculation of the coherence time of the basal divacancy in silicon carbide at avoided crossings; </span></li><li><span>the calculation for magnetic field orientation-dependent dynamics of a shallow donor in silicon</span></li></ul></li></ul><h4 id='k37-ensemble-spin-relaxation-studies-of-shallow-donor-qubits-in-zno'><span>K37 Ensemble spin relaxation studies of shallow donor qubits in ZnO</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>Ref we used for T1 project.</span></p><p><span>Spin relaxation,Kai-Mei C Fu</span></p><p><span>In previous work, we have demonstrated optical spin initialization, spin relaxation times (T1) of 140 μs, spin-echo coherence times (T2) of 50 μs and narrow inhomogeneously broadened linewidths of ≈25 GHz </span></p><p><a href='https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.10.064061' target='_blank' class='url'>https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.10.064061</a></p><p><span>Their paper: </span><a href='https://arxiv.org/pdf/2111.11564.pdf' target='_blank' class='url'>https://arxiv.org/pdf/2111.11564.pdf</a></p><p><img src="Images/znO.png" style="zoom: 33%;" /><img src="Images/zno_2.png" style="zoom:50%;" /></p><p><span>Substituting Zn with Al, Ga or In. we call the substituted : donor; </span></p><p><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.705ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1195.6 833.9" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: 0px;"><defs><path id="MJX-16-TEX-I-1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path><path id="MJX-16-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D435" xlink:href="#MJX-16-TEX-I-1D435"></use></g><g data-mml-node="mn" transform="translate(792,363) scale(0.707)"><use data-c="35" xlink:href="#MJX-16-TEX-N-35"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>B</mi><mn>5</mn></msup></math></mjx-assistive-mml></mjx-container><script type="math/tex">B^5</script><span> dependency at B&gt;3T</span></p><h4 id='m46--novel-first-principles-tools-for-electron-dynamics-in-quantum-materials-and-devices-marco-bernadi'><span>M46  Novel First-Principles Tools for Electron Dynamics in Quantum Materials and Devices (Marco Bernadi)</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>Methods to accurately predict spin relaxation and defect-mediated scattering, of relevance for quantum devices</span></p><p><span>conclude by highlighting progress on our open-source code, PERTURBO</span></p><p><span>(no video)</span></p><p><span> </span><a href='https://arxiv.org/pdf/2203.06401.pdf' target='_blank' class='url'>https://arxiv.org/pdf/2203.06401.pdf</a></p><h4 id='w46-calculating-phonons-within-the-flapw-method-using-density-functional-perturbation-theory-dfpt'><span>W46 Calculating Phonons within the FLAPW Method using Density Functional Perturbation Theory (DFPT)</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>we present our implementation of the DFPT approach within the FLAPW method, encoded in the FLEUR code.</span></p><p><span>This is a code work on calculating phonon dispersion </span><a href='http://www.flapw.de'><span>www.flapw.de</span></a></p><p><img src="Images/FLAPW_1.png" style="zoom:50%;" /></p><p><img src="Images/FLAPW2.png" style="zoom:50%;" /></p><h4 id='w46-electron-spin-decoherence-due-to-phonons-unified-many-body-framework-and-first-principles-calculations'><span>W46 Electron spin decoherence due to phonons: Unified many-body framework and first-principles calculations</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>present a unified many-body approach for s-ph decoherence, which encompasses both the EY and DP mechanisms</span></p><p><a href='https://apsmarch22.onlineeventpro.freeman.com/sessions/23878708/subsession/33045690/W46' target='_blank' class='url'>https://apsmarch22.onlineeventpro.freeman.com/sessions/23878708/subsession/33045690/W46</a></p><p><span>(no video yet)</span></p><p>&nbsp;</p><h4 id='y36-scaling-spin-coherence-in-solid-state-defect-qubit'><span>Y36 Scaling Spin Coherence in Solid-state Defect Qubit</span></h4><p><a href="#top"><span> Back to top</span></a></p><p><span>Use CCE(cluster correlation expansion ) calculation for spin coherence time T2 calculation</span></p><p><span>Decouple the contributions from different spin bath from various elements</span></p><p><img src="Images/spin_1.png" style="zoom: 33%;" /></p><h3 id='other-that-have-no-video-yet'><span>Other that have no video yet:</span></h3><p><a href="#top"><span> Back to top</span></a></p><p><span> Excited State VII: 2D materials and quantum materials</span></p><h4 id='y48-first-principles-calculations-of-excitons-in-2d-photoemission-spectra-relaxation-dynamics-and-magnetic-effects'><span>Y48 First-principles calculations of excitons in 2D: photoemission spectra, relaxation dynamics, and magnetic effects</span></h4><p><span>valley- and spin-selective excitonic energy relaxation pathway, which leads to novel ultrafast dynamics and the discovery of selection rules for exciton-phonon couplings</span></p><p><a href='https://apsmarch22.onlineeventpro.freeman.com/sessions/23878776/subsession/33046478/Y48' target='_blank' class='url'>https://apsmarch22.onlineeventpro.freeman.com/sessions/23878776/subsession/33046478/Y48</a></p><p><span>No video yet</span></p><h4 id='y52-first-principles-prediction-of-long-spin-lifetimes-in-materials-with-uniform-internal-magnetic-fields'><span>Y52 First-principles prediction of long spin lifetimes in materials with uniform internal magnetic fields</span></h4><p><a href='https://apsmarch22.onlineeventpro.freeman.com/sessions/23878780/subsession/33046530/Y52' target='_blank' class='url'>https://apsmarch22.onlineeventpro.freeman.com/sessions/23878780/subsession/33046530/Y52</a></p><p><span>(No video yet)</span></p><p><span>We show that a wide class of hybrid perovskite materials exhibit near-perfect uniformity in the direction of the internal magnetic field, which is known to strongly suppress DP spin relaxation. Using a first-principles density-matrix framework for predicting spin relaxation in a wide class of materials, we computationally demonstrate increased spin life times in these materials. Finally, we investigate the impact of additional symmetry breaking, such as chirality, on the spin dynamics in such materials. </span></p><h4 id='y52-ab-initio-calculation-of-t2-using-lindbladian-dynamics'><span>Y52 Ab initio calculation of T2 using Lindbladian dynamics</span></h4><p><a href='https://apsmarch22.onlineeventpro.freeman.com/sessions/23878780/subsession/33046531/Y52' target='_blank' class='url'>https://apsmarch22.onlineeventpro.freeman.com/sessions/23878780/subsession/33046531/Y52</a></p><p><span>(No video yet)</span></p><p><span>Using a recently-developed first-principles Lindbladian density-matrix simulation framework, we directly simulate Hahn spin echo measurements to extract T2 in exactly the same way as in experiments</span></p><p><span>Ravishankar Sundararaman</span></p></div></div>
+</body>
+</html>
